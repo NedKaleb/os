@@ -1,0 +1,10 @@
+*~
+*#
+*.bak
+build/
+*.iso
+iso/
+isodir/
+myos
+bochs*
+.gdb_history
