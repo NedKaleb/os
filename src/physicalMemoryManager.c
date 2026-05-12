@@ -33,7 +33,8 @@ uint8_t checkBlock(uint32_t bit)
   return memoryMap[bit / 32] & (1 << (bit % 32));
 }
 
-// Finds the first free block of given size
+// Returns the first free block of given size
+// Returns -1 if the numBlocks = 0, -2 if no free block can be found
 // Todo: optimise free block finder
 int32_t findFreeBlocks(uint32_t numBlocks)
 {
@@ -70,7 +71,7 @@ int32_t findFreeBlocks(uint32_t numBlocks)
     }
   }
 
-  return -1; // ERROR no free region big enough
+  return -2; // ERROR no free region big enough
 }
 
 void initialiseMemoryManager(uint32_t size, uint32_t startAddress)
